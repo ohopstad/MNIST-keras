@@ -37,7 +37,13 @@ model.compile(
 # train the model
 model.fit(
   train_images, # training data
-  train_labels, # training targets
+  to_categorical(train_labels), # training targets
   epochs=5,
   batch_size=32,
+)
+
+# evaluation
+model.evaluate(
+  test_images,
+  to_categorical(test_labels)
 )
