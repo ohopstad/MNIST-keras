@@ -43,7 +43,8 @@ model.fit(
 )
 
 # evaluation
-model.evaluate(
+loss, hitRate = model.evaluate(
   test_images,
   to_categorical(test_labels)
 )
+print("loss: {}\tacc: {}".format(loss, hitRate))
